@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import { Loader } from '../../utils/Atoms'
 import { useFetch } from '../../utils/hooks'
+import { Link } from 'react-router-dom'
 
 const FreelanceWrapper = styled.div`
   display: flex;
@@ -53,12 +54,14 @@ function Freelances() {
       ) : (
         <CardsContainer>
           {freelancersList.map((profile) => (
-            <Card
-              key={`${profile.name}-${profile.id}`}
-              label={profile.job}
-              picture={profile.picture}
-              title={profile.name}
-            />
+            <Link key={`freelance-${profile.id}`} to={`/profile/${profile.id}`}>
+              <Card
+                key={`${profile.name}-${profile.id}`}
+                label={profile.job}
+                picture={profile.picture}
+                title={profile.name}
+              />
+            </Link>
           ))}
         </CardsContainer>
       )}

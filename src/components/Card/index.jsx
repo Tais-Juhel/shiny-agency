@@ -57,14 +57,12 @@ class Card extends Component {
 
   render() {
     const { theme, picture, label, title } = this.props
-    const { isFavorite } = this.state
-    const titleFav = isFavorite ? `⭐️ ${title} ⭐️` : title
 
     return (
-      <CardWrapper theme={theme} onClick={this.setFavorite}>
+      <CardWrapper theme={theme}>
         <CardLabel theme={theme}>{label}</CardLabel>
         <CardImage src={picture} alt="freelance" />
-        <CardTitle theme={theme}>{titleFav}</CardTitle>
+        <CardTitle theme={theme}>{title}</CardTitle>
       </CardWrapper>
     )
   }
