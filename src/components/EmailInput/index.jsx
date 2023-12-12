@@ -1,27 +1,14 @@
-import { Component } from 'react'
+import { useState } from 'react'
 
-class EmailInput extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      inputValue: '',
-    }
-  }
+function EmailInput() {
+  const [inputValue, setInputValue] = useState('')
 
-  updateInputValue = (value) => {
-    this.setState({ inputValue: value })
-  }
-
-  render() {
-    const { theme } = this.props
-
-    return (
-      <div>
-        {this.state.inputValue}
-        <input onChange={(e) => this.updateInputValue(e.target.value)} />
-      </div>
-    )
-  }
+  return (
+    <div>
+      {inputValue}
+      <input onChange={(e) => setInputValue(e.target.value)} />
+    </div>
+  )
 }
 
 export default EmailInput
