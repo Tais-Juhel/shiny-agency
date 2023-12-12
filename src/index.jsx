@@ -10,7 +10,7 @@ import Freelances from './pages/Freelances'
 import Footer from './components/Footer'
 import { ThemeProvider, SurveyProvider } from './utils/context'
 import GlobalStyle from './utils/style/GlobalStyle'
-import ProfileContainer from './components/ProfileContainer'
+import Profile from './pages/Profile'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -25,7 +25,7 @@ root.render(
             <Route path="/survey/:questionNumber" element={<Survey />} />
             <Route path="/results" element={<Results />} />
             <Route path="/freelances" element={<Freelances />} />
-            <Route path="/profile/:id" element={<ProfileContainer />} />
+            <Route path="/profile/:id" element={<Profile />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
